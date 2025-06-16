@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Politipedia</title>
+  <style>
+    body {
+      font-family: Georgia, serif;
+      background-color: #FFFFFF;
+      color: #000000;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #0A3D62;
+      color: #FFFFFF;
+      padding: 1rem;
+      text-align: center;
+    }
+    main {
+      padding: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    h2 {
+      color: #0A3D62;
+    }
+    .term {
+      cursor: pointer;
+      color: #0A3D62;
+      text-decoration: underline;
+      margin-bottom: 0.5rem;
+      display: inline-block;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    .modal-content {
+      background-color: #FFFFFF;
+      margin: 5% auto;
+      padding: 2rem;
+      border: 1px solid #7D7D7D;
+      width: 90%;
+      max-width: 800px;
+      color: #000000;
+    }
+    .close {
+      color: #7D7D7D;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .close:hover,
+    .close:focus {
+      color: #000000;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Political Glossary</h1>
+  </header>
+  <main>
+    <section>
+      <h2>Governmental Structures</h2>
+      <div class="term" onclick="openModal('democracy')">Democracy</div>
+      <div class="term" onclick="openModal('monarchy')">Monarchy</div>
+      <div class="term" onclick="openModal('totalitarianism')">Totalitarianism</div>
+      <div class="term" onclick="openModal('authoritarianism')">Authoritarianism</div>
+      <div class="term" onclick="openModal('theocracy')">Theocracy</div>
+      <div class="term" onclick="openModal('oligarchy')">Oligarchy</div>
+      <div class="term" onclick="openModal('military-junta')">Military Junta</div>
+      <div class="term" onclick="openModal('technocracy')">Technocracy</div>
+      <div class="term" onclick="openModal('plutocracy')">Plutocracy</div>
+      <div class="term" onclick="openModal('anarchy')">Anarchy</div>
+    </section>
+    <section>
+      <h2>Political Ideologies</h2>
+      <div class="term" onclick="openModal('socialism')">Socialism</div>
+      <div class="term" onclick="openModal('communism')">Communism</div>
+      <div class="term" onclick="openModal('capitalism')">Capitalism</div>
+      <div class="term" onclick="openModal('fascism')">Fascism</div>
+      <div class="term" onclick="openModal('nationalism')">Nationalism</div>
+    </section>
+  </main>
+
+  <!-- Modals -->
+  <div id="democracy" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('democracy')">&times;</span>
+      <h3>Democracy</h3>
+      <p><em>“The will of the people shall be the basis of the authority of government.” - UDHR</em></p>
+      <p>Democracy is a system in which the right to govern resides indirectly or directly within the people. This form of government values individual freedoms, accountability, and peaceful transitions of power.</p>
+      <ul>
+        <li><strong>Free and Fair Elections:</strong> Elections with minimal coercion, as described by Robert Dahl.</li>
+        <li><strong>Rule of Law:</strong> Laws are public, enforced equally, adjudicated independently, and aligned with international human rights.</li>
+        <li><strong>Political Pluralism & Freedom of Expression:</strong> Multiple parties, open debate, and protected freedoms (speech, press, assembly, etc.).</li>
+        <li><strong>Organization:</strong> Citizens elect representatives and actively participate in the political process.</li>
+        <li><strong>Example:</strong> Ancient Athens</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="socialism" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('socialism')">&times;</span>
+      <h3>Socialism</h3>
+      <p><strong>Founders:</strong> Karl Marx, Friedrich Engels, Eduard Bernstein</p>
+      <p><strong>Description:</strong> Socialism advocates for collective or government ownership of the means of production and distribution of goods. The goal is to reduce inequality and provide economic security through social ownership and public services.</p>
+      <ul>
+        <li>Wealth redistribution through taxation</li>
+        <li>Free access to healthcare, education, and housing</li>
+        <li>Worker cooperatives and collective ownership</li>
+        <li>Mixed economy in democratic socialism</li>
+      </ul>
+      <p><strong>Ideology in Action:</strong> Sweden (Social Democracy), Cuba, India (pre-1991 policies)</p>
+    </div>
+  </div>
+
+  <div id="communism" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('communism')">&times;</span>
+      <h3>Communism</h3>
+      <p><strong>Founders:</strong> Karl Marx and Friedrich Engels</p>
+      <p><strong>Description:</strong> Communism is a classless, stateless society where all property is communally owned. It seeks to abolish capitalism and create total economic and social equality.</p>
+      <ul>
+        <li>Abolition of private property</li>
+        <li>Central planning of the economy</li>
+        <li>"From each according to his ability, to each according to his need"</li>
+        <li>Dictatorship of the proletariat (as a transitional phase)</li>
+      </ul>
+      <p><strong>Ideology in Action:</strong> Soviet Union, China (Maoist era), North Korea</p>
+    </div>
+  </div>
+
+  <div id="capitalism" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('capitalism')">&times;</span>
+      <h3>Capitalism</h3>
+      <p><strong>Founders:</strong> Adam Smith, Milton Friedman</p>
+      <p><strong>Description:</strong> Capitalism is an economic and political system in which private individuals or businesses own capital goods. Production and prices are determined by competition in a free market.</p>
+      <ul>
+        <li>Private property rights</li>
+        <li>Free markets and competition</li>
+        <li>Limited government intervention</li>
+        <li>Profit motive as an engine of growth</li>
+      </ul>
+      <p><strong>Ideology in Action:</strong> United States, United Kingdom, South Korea</p>
+    </div>
+  </div>
+
+  <div id="fascism" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('fascism')">&times;</span>
+      <h3>Fascism</h3>
+      <p><strong>Founders:</strong> Benito Mussolini, Giovanni Gentile</p>
+      <p><strong>Description:</strong> Fascism is an authoritarian and nationalist political ideology emphasizing the supremacy of the state over individual freedoms, a centralized autocratic government, and often, militarism and racism.</p>
+      <ul>
+        <li>Totalitarian leadership (often charismatic)</li>
+        <li>Anti-communism and anti-liberalism</li>
+        <li>National or racial purity</li>
+        <li>Cult of tradition and the state</li>
+      </ul>
+      <p><strong>Ideology in Action:</strong> Nazi Germany, Fascist Italy, Francoist Spain</p>
+    </div>
+  </div>
+
+  <div id="nationalism" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('nationalism')">&times;</span>
+      <h3>Nationalism</h3>
+      <p><strong>Founders:</strong> Various historical figures depending on context (Giuseppe Mazzini, Johann Gottlieb Fichte)</p>
+      <p><strong>Description:</strong> Nationalism emphasizes the interests, culture, and identity of a specific nation, often above those of others. It can unify or divide, depending on how it’s applied.</p>
+      <ul>
+        <li>Sovereignty and self-determination</li>
+        <li>Shared language, culture, or ancestry</li>
+        <li>National unity over globalism</li>
+        <li>Can be civic (inclusive) or ethnic (exclusive)</li>
+      </ul>
+      <p><strong>Ideology in Action:</strong> Indian independence movement, Zionism, Brexit movement</p>
+    </div>
+  </div>
+
+<div id="monarchy" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('monarchy')">&times;</span>
+    <h3>Monarchy</h3>
+    <p><strong>Description:</strong> A monarchy is a form of government where sovereignty is embodied in a single individual, usually a king or queen, who rules for life or until abdication. Power may be absolute or constitutional (shared with a parliament).</p>
+    <ul>
+      <li><strong>Hereditary Succession:</strong> Leadership is passed down through family lines.</li>
+      <li><strong>Absolute vs. Constitutional:</strong> Absolute monarchs wield total power; constitutional monarchs are ceremonial heads of state.</li>
+      <li><strong>Stability and Tradition:</strong> Monarchies often emphasize continuity and national identity.</li>
+      <li><strong>Example:</strong> United Kingdom (constitutional), Saudi Arabia (absolute)</li>
+    </ul>
+  </div>
+</div>
+
+<div id="totalitarianism" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('totalitarianism')">&times;</span>
+    <h3>Totalitarianism</h3>
+    <p><strong>Description:</strong> Totalitarianism is a political system where the state holds total authority over society and seeks to control all aspects of public and private life.</p>
+    <ul>
+      <li><strong>Single-party Rule:</strong> Often led by a dictator or a dominant party.</li>
+      <li><strong>Suppression of Dissent:</strong> Free press, political opposition, and civil liberties are eliminated.</li>
+      <li><strong>State Propaganda:</strong> Media is used to shape public opinion and promote loyalty.</li>
+      <li><strong>Example:</strong> Nazi Germany, Stalinist Soviet Union, North Korea</li>
+    </ul>
+  </div>
+</div>
+
+<div id="authoritarianism" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('authoritarianism')">&times;</span>
+    <h3>Authoritarianism</h3>
+    <p><strong>Description:</strong> Authoritarianism is a governing system that values order and control over personal freedom. It is characterized by strong central power and limited political freedoms.</p>
+    <ul>
+      <li><strong>Limited Political Pluralism:</strong> Power is concentrated, and opposition is often suppressed.</li>
+      <li><strong>Control Through Force:</strong> Government may use police, military, or surveillance to maintain control.</li>
+      <li><strong>Leadership Longevity:</strong> Leaders often remain in power without democratic legitimacy.</li>
+      <li><strong>Example:</strong> Belarus, China (contemporary), Egypt (under Mubarak)</li>
+    </ul>
+  </div>
+</div>
+
+<div id="theocracy" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('theocracy')">&times;</span>
+    <h3>Theocracy</h3>
+    <p><strong>Description:</strong> A theocracy is a government ruled by or subject to religious authority. Laws are based on religious doctrine, and clerics often hold political power.</p>
+    <ul>
+      <li><strong>Religious Law:</strong> Civil law is often synonymous with religious law (e.g., Sharia).</li>
+      <li><strong>Clerical Rule:</strong> Religious leaders often serve as heads of state or influence legislation.</li>
+      <li><strong>Divine Legitimacy:</strong> Authority is derived from divine guidance or religious texts.</li>
+      <li><strong>Example:</strong> Iran, Vatican City (Holy See)</li>
+    </ul>
+  </div>
+</div>
+
+<div id="oligarchy" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('oligarchy')">&times;</span>
+    <h3>Oligarchy</h3>
+    <p><strong>Description:</strong> Oligarchy is a form of power structure in which a small number of individuals—often from the same socioeconomic, military, or political elite—control the government.</p>
+    <ul>
+      <li><strong>Concentration of Power:</strong> Power resides in the hands of a few.</li>
+      <li><strong>Limited Political Access:</strong> Public participation in decision-making is minimal.</li>
+      <li><strong>Wealth or Status-Based Control:</strong> Often rooted in class, wealth, or connections.</li>
+      <li><strong>Example:</strong> Russia (post-Soviet oligarchs), ancient Sparta</li>
+    </ul>
+  </div>
+</div>
+
+<div id="military-junta" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('military-junta')">&times;</span>
+    <h3>Military Junta</h3>
+    <p><strong>Description:</strong> A military junta is a government led by a committee of military leaders. It typically comes to power through a coup and maintains authority through force.</p>
+    <ul>
+      <li><strong>Seizure of Power:</strong> Typically established after overthrowing a civilian government.</li>
+      <li><strong>Martial Law:</strong> Civil liberties may be suspended in favor of military control.</li>
+      <li><strong>Lack of Elections:</strong> Power is not derived from democratic processes.</li>
+      <li><strong>Example:</strong> Myanmar (2021–present), Chile under Pinochet</li>
+    </ul>
+  </div>
+</div>
+
+<div id="technocracy" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('technocracy')">&times;</span>
+    <h3>Technocracy</h3>
+    <p><strong>Description:</strong> A technocracy is a system of governance in which decision-makers are selected based on their expertise in a given area, especially scientific or technical knowledge.</p>
+    <ul>
+      <li><strong>Rule by Experts:</strong> Leaders are professionals in economics, engineering, science, etc.</li>
+      <li><strong>Evidence-Based Policy:</strong> Decisions rely on data, models, and research rather than ideology.</li>
+      <li><strong>Meritocratic Leadership:</strong> Positions based on qualifications, not elections.</li>
+      <li><strong>Example:</strong> Some argue aspects of the EU or Singapore exhibit technocratic elements.</li>
+    </ul>
+  </div>
+</div>
+
+<div id="plutocracy" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('plutocracy')">&times;</span>
+    <h3>Plutocracy</h3>
+    <p><strong>Description:</strong> Plutocracy is a political system governed by the wealthy, where economic power translates directly into political influence.</p>
+    <ul>
+      <li><strong>Wealth Equals Power:</strong> Economic elites shape laws, regulations, and policies.</li>
+      <li><strong>Limited Social Mobility:</strong> Power structures benefit the rich, often at the expense of others.</li>
+      <li><strong>Campaign Financing:</strong> Political influence may be exercised through donations and lobbying.</li>
+      <li><strong>Example:</strong> Critics argue that the U.S. exhibits plutocratic tendencies.</li>
+    </ul>
+  </div>
+</div>
+
+<div id="anarchy" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('anarchy')">&times;</span>
+    <h3>Anarchy</h3>
+    <p><strong>Description:</strong> Anarchy refers to the absence of government or authority. It can represent chaos and disorder or, philosophically, a voluntary, cooperative society without rulers.</p>
+    <ul>
+      <li><strong>No Central Authority:</strong> No formal structure of governance.</li>
+      <li><strong>Autonomy and Mutual Aid:</strong> In some theories, emphasizes horizontal organization and self-management.</li>
+      <li><strong>Misunderstood Concept:</strong> Often confused with lawlessness and disorder.</li>
+      <li><strong>Example:</strong> Spanish Civil War anarchist regions, Somalia (1990s)</li>
+    </ul>
+  </div>
+</div>
+
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = 'block';
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach(modal => {
+        if (event.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    };
+  </script>
+</body>
+</html>
